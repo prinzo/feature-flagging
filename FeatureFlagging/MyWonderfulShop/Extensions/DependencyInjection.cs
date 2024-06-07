@@ -1,6 +1,12 @@
-﻿namespace MyWonderfulShop.API.Extensions;
+﻿using MyWonderfulShop.API.Products.Services;
 
-public class DependencyInjection
+namespace MyWonderfulShop.API.Extensions;
+
+public static class DependencyInjection
 {
-    
+    public static IServiceCollection AddApplicationDependencies(this IServiceCollection services)
+    {
+        services.AddScoped<IProductService, ProductService>();
+        return services;
+    }
 }
